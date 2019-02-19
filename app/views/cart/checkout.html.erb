@@ -1,0 +1,8 @@
+<h1>Thank You for your purchase</h1>
+<p>Order ID: <%= @order.id %>
+<p>Sales Tax: <%= @order.sales_tax %></p>
+<p>Grand Total: <%= @order.grand_total %></p>
+
+<% @order.order_items.each do |product_id, quantity| %>
+   <p><%= Product.find(product_id).name %> -- <%= quantity %></p>
+<% end %>
